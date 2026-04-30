@@ -1,0 +1,73 @@
+{
+  "name": "celsonery/laravel-brasilapi",
+  "description": "A little Laravel package for integration with Brasil Api.",
+  "keywords": [
+    "celsonery",
+    "laravel",
+    "laravel-brasilapi",
+    "brasil",
+    "cep",
+    "cnpj",
+    "bank"
+  ],
+  "homepage": "https://github.com/celsonery/laravel-brasilapi",
+  "version": "1.0.0",
+  "type": "library",
+  "license": "MIT",
+  "support": {
+    "issues": "https://github.com/celsonery/laravel-brasilapi/issues",
+    "source": "https://github.com/celsonery/laravel-brasilapi"
+  },
+  "autoload": {
+    "psr-4": {
+      "CelsoNery\\BrasilApi\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "CelsoNery\\BrasilApi\\Tests\\": "tests/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Celso Nery",
+      "email": "celso.nery@gmail.com",
+      "role": "Maintainer"
+    }
+  ],
+  "extra": {
+    "laravel": {
+      "providers": [
+        "CelsoNery\\BrasilApi\\Providers\\BrasilApiServiceProvider"
+      ],
+      "aliases": {
+        "BrasilApi": "CelsoNery\\BrasilApi\\Facades\\BrasilApi"
+      }
+    }
+  },
+  "minimum-stability": "stable",
+  "require": {
+    "php": "^8.2",
+    "illuminate/support": "^11.0|^12.0|^13.0",
+    "illuminate/http": "^11.0|^12.0|^13.0"
+  },
+  "require-dev": {
+    "pestphp/pest": "^4.6",
+    "pestphp/pest-plugin-laravel": "^4.1",
+    "orchestra/testbench": "^11.1",
+    "laravel/pint": "^1.29"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "scripts": {
+    "lint": "pint --test",
+    "lint:fix": "pint",
+    "tests": [
+      "@lint",
+      "pest"
+    ]
+  }
+}

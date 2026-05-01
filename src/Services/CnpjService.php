@@ -13,12 +13,12 @@ class CnpjService
     {
         $cnpj = preg_replace('/[^0-9]/', '', $cnpj);
 
-        if (!$this->cnpjValid($cnpj)) {
+        if (! $this->cnpjValid($cnpj)) {
             throw new \Exception('Invalid cnpj number!');
         }
 
         return Http::timeout(config('brasilapi.timeout'))
-            ->get(config('brasilapi.base_url') . "/cnpj/v1/{$cnpj}")
+            ->get(config('brasilapi.base_url')."/cnpj/v1/{$cnpj}")
             ->throw()
             ->json();
     }

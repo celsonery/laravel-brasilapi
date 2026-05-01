@@ -26,13 +26,13 @@ trait ValidateCnpj
         $pesos = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
 
         for ($i = 0; $i < 12; $i++) {
-            $soma += (int)$cnpj[$i] * $pesos[$i];
+            $soma += (int) $cnpj[$i] * $pesos[$i];
         }
 
         $resto = $soma % 11;
         $primeiroDigito = $resto < 2 ? 0 : 11 - $resto;
 
-        if ((int)$cnpj[12] !== $primeiroDigito) {
+        if ((int) $cnpj[12] !== $primeiroDigito) {
             return false;
         }
 
@@ -41,12 +41,12 @@ trait ValidateCnpj
         $pesos = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
 
         for ($i = 0; $i < 13; $i++) {
-            $soma += (int)$cnpj[$i] * $pesos[$i];
+            $soma += (int) $cnpj[$i] * $pesos[$i];
         }
 
         $resto = $soma % 11;
         $segundoDigito = $resto < 2 ? 0 : 11 - $resto;
 
-        return (int)$cnpj[13] === $segundoDigito;
+        return (int) $cnpj[13] === $segundoDigito;
     }
 }
